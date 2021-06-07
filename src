@@ -1,0 +1,47 @@
+#echo "# CustomerManagement" >> README.md
+#git init
+#git add README.md
+#git commit -m "first commit"
+#git branch -M main
+#git remote add origin https://github.com/vassudha12/CustomerManagement.git
+#git push -u origin main
+#----------------------------------------------------------------------------------------
+
+from tkinter import *
+
+
+root=Tk()
+
+root.geometry("500x400")
+
+def display():
+    data = var.get()
+    print(data)
+    var.set("")
+
+lb=Label(root,text="Enter Customer Id: ",font=1)
+lb.grid(row=0,column=0)
+lb1=Label(root,text="Enter Customer Name: ",font=1)
+lb1.grid(row=1,column=0)
+lb2=Label(root,text="Enter Customer Age: ",font=1)
+lb2.grid(row=2,column=0)
+btn=Button(root,text="submit",font=1)
+btn.grid(row=3,column=1)
+tkvar = StringVar(root)
+choices = { 'Agra','Delhi','Lucknow','Jaipur','Hydrabad'}
+tkvar.set('City')
+mn=OptionMenu(root,tkvar,*choices)
+mn.grid(row=4,column=1)
+
+varId=StringVar()
+enterId=Entry(root,textvariable=varId,font=1)
+enterId.grid(row=0,column=1)
+
+varName=StringVar()
+enterName=Entry(root,textvariable=varName,font=1)
+enterName.grid(row=1,column=1)
+
+varAge=StringVar()
+enterAge=Entry(root,textvariable=varAge,font=1)
+enterAge.grid(row=2,column=1)
+root.mainloop()
